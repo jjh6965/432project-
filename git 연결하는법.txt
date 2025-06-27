@@ -1,43 +1,70 @@
-#0.우선은 git에 리포지토리를 만들고 폴더를 경로를 선택한 후에 432projectSetting 폴더를 만든다.
-
 # 1. 프로젝트 디렉토리로 이동
-# - 지정된 디렉토리(C:\jaehun\[Git]_gitRepo\432projectSetting)로 이동하여 작업 환경을 설정합니다.
 cd C:\jaehun\[Git]_gitRepo\432projectSetting
 
 # 2. 기존 .git 폴더 삭제 (새로 시작할 경우에만)
-# - 이전 Git 저장소 데이터를 삭제하여 완전히 새로 시작합니다. 기존 작업 내역이 있다면 이 단계는 생략하세요.
 rmdir /s .git
 
 # 3. 새 Git 저장소 초기화
-# - 현재 디렉토리에 새로운 Git 저장소를 생성하여 버전 관리를 시작합니다.
 git init
 
 # 4. README.md 파일 생성
-# - 프로젝트에 대한 기본 정보가 담긴 README.md 파일을 생성합니다. 여기서는 간단히 '# 432project'라는 제목을 추가합니다.
 echo # 432project > README.md
 
-# 5. 파일을 스테이징 영역에 추가
-# - README.md 파일을 Git이 추적할 수 있도록 스테이징 영역에 추가합니다.
+# 5. 파일 스테이징
 git add README.md
 
 # 6. 변경 사항 커밋
-# - 스테이징된 README.md 파일을 로컬 저장소에 커밋하여 변경 사항을 기록합니다. 커밋 메시지는 "Initial commit"로 설정합니다.
 git commit -m "Initial commit"
 
-# 7. 원격 저장소 추가
-# - GitHub 저장소(https://github.com/jjh6965/432project-.git)를 'origin'이라는 이름으로 로컬 저장소에 연결합니다.
+# 7. Git 사용자 이름 설정
+git config --global user.name "Your Name"
+
+# 8. Git 사용자 이메일 설정
+git config --global user.email "your.email@example.com"
+
+# 9. 원격 저장소 추가
 git remote add origin https://github.com/jjh6965/432project-.git
 
-# 8. 원격 저장소 설정 확인
-# - 설정된 원격 저장소의 URL을 확인하여 올바르게 연결되었는지 검증합니다.
-# - 출력 예: 
-#   origin  https://github.com/jjh6965/432project-.git (fetch)
-#   origin  https://github.com/jjh6965/432project-.git (push)
+# 10. 원격 저장소 설정 확인
 git remote -v
 
-# 9. 로컬 커밋을 원격 저장소로 푸시
-# - 로컬 main 브랜치의 커밋을 GitHub의 원격 저장소 main 브랜치로 푸시하고, upstream을 설정(-u)하여 이후 간단히 git push/pull 사용 가능.
+# 11. 로컬 커밋을 원격 저장소로 푸시 (첫 푸시 시 upstream 설정)
 git push -u origin main
 
- - 파일 올리는 법 : git push origin main
- - 파일 가져오는 법 : git pull origin main
+# 12. 현재 상태 확인
+git status
+
+# 13. 테스트 파일 생성
+echo This is a test file > test.txt
+
+# 14. 모든 변경 사항 스테이징
+git add .
+
+# 15. 커밋 생성
+git commit -m "Add test file"
+
+# 16. 푸시
+git push origin main
+
+# 17. 새 파일 생성 (예: git 연결하는법.txt)
+echo Git 연결 방법 > git 연결하는법.txt
+
+# 18. 특정 파일 스테이징
+git add git 연결하는법.txt
+
+# 19. 커밋 생성 (특정 파일 반영)
+git commit -m "Add git 연결하는법.txt file"
+
+# 20. 푸시 (upstream 이미 설정된 경우)
+git push origin main
+
+# 21. 브랜치 상태 확인
+git branch -vv
+
+# 22. 원격 저장소와 동기화 (충돌 시)
+git pull origin main --allow-unrelated-histories
+
+
+
+
+깃을 푸시 풀 하기 전에는 반드 시 add . 하셈
