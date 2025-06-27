@@ -38,3 +38,6 @@ git remote -v
 # 9. 로컬 커밋을 원격 저장소로 푸시
 # - 로컬 main 브랜치의 커밋을 GitHub의 원격 저장소 main 브랜치로 푸시하고, upstream을 설정(-u)하여 이후 간단히 git push/pull 사용 가능.
 git push -u origin main
+
+ - 파일 올리는 법 : git push origin main
+ - 파일 가져오는 법 : git pull origin main
